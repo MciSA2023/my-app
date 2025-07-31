@@ -3,8 +3,8 @@ import { Dialog } from '@headlessui/react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-const images = [
-  '/bilder/hero/Bild1.JPEG',
+const images: string[] = [
+  '/images/img1.jpg',
   '/images/img2.jpg',
   '/images/img3.jpg',
   '/images/img4.jpg',
@@ -18,8 +18,8 @@ const images = [
   '/images/img12.jpg',
 ];
 
-export default function Gallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
+export default function Gallery(): JSX.Element {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <div className="bg-black text-white min-h-screen px-4 py-8">
@@ -46,7 +46,7 @@ export default function Gallery() {
 
       <Dialog open={!!selectedImage} onClose={() => setSelectedImage(null)} className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
         <Dialog.Panel className="max-w-4xl w-full">
-          <img src={selectedImage} alt="Fullscreen" className="w-full h-auto rounded-lg" />
+          {selectedImage && <img src={selectedImage} alt="Fullscreen" className="w-full h-auto rounded-lg" />}
         </Dialog.Panel>
       </Dialog>
 
