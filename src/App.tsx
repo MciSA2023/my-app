@@ -5,13 +5,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import SocialSidebar from './components/SocialSidebar';
 import Hero from './screens/Hero';
-import GallerySection from './screens/GallerySection'; // Importpfad korrigiert
+import GallerySection from './screens/GallerySection';
 import FullscreenImageViewer from './components/FullscreenImageViewer';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
+// --- TYPDEFINITIONEN IMPORTIEREN ---
+import { ImageData, NavLink, SocialLink } from './types';
+
 // --- WICHTIG: LOKALE BILDER IMPORTIEREN ---
-// Die Bildimporte bleiben hier, um die Datenstruktur zu definieren.
 import bild1 from './assets/bilder/hero/Bild1.JPEG';
 import bild2 from './assets/bilder/hero/Bild2.JPEG';
 import bild3 from './assets/bilder/hero/Bild3.JPEG';
@@ -25,25 +27,7 @@ import bild10 from './assets/bilder/hero/Bild10.JPEG';
 import bild11 from './assets/bilder/hero/Bild11.JPEG';
 import bild12 from './assets/bilder/hero/Bild12.JPEG';
 import heroBackground from './assets/bilder/hero/Bild6.JPEG';
-
-// --- TYPDEFINITIONEN ---
-interface ImageData {
-  id: number;
-  src: string;
-  alt: string;
-  aspect: 'portrait' | 'landscape';
-}
-
-interface NavLink {
-  name: string;
-  href: string;
-}
-
-interface SocialLink {
-  name: string;
-  href: string;
-  icon: JSX.Element;
-}
+import navBackground from './assets/bilder/hero/Bild6.JPEG'; // Hintergrundbild für Navigation
 
 
 // --- DATEN ---
@@ -62,20 +46,20 @@ const mockImages: ImageData[] = [
   { id: 12, src: bild12, alt: "Another portrait", aspect: "portrait" },
 ];
 
-const mainNavLinks = [
+const mainNavLinks: NavLink[] = [
     { name: 'Homepage', href: '/' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Motion', href: '/motion' },
 ];
 
-const subNavLinks = [
+const subNavLinks: NavLink[] = [
     { name: 'WALL LIST', href: '#' },
     { name: 'EDUCATION', href: '#' },
     { name: 'MY PRESETS', href: '#' },
     { name: 'PRIVATE', href: '#' },
 ];
 
-const socialLinksData = [
+const socialLinksData: SocialLink[] = [
   { name: 'Instagram', href: '#', icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg>
     )
@@ -95,7 +79,6 @@ const socialLinksData = [
 ];
 
 
-// Haupt-App-Komponente
 function App() {
   const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -160,7 +143,7 @@ function App() {
               onToggle={handleMenuToggle}
               mainLinks={mainNavLinks}
               subLinks={subNavLinks}
-              background={heroBackground}
+              background={navBackground}
             />
             <SocialSidebar socialLinks={socialLinksData} />
             
