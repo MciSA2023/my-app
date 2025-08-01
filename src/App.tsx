@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// --- KOMPONENTEN IMPORTE ---
+// --- KOMPONENTEN IMPORTE NACH DER KORRIGIERTEN HIERARCHIE ---
 import Navigation from './components/Navigation';
 import SocialSidebar from './components/SocialSidebar';
-import HeroSection from './components/HeroSection';
-import GallerySection from './components/GallerySection';
+import Hero from './screens/Hero';
+import GallerySection from './screens/GallerySection'; // Importpfad korrigiert
 import FullscreenImageViewer from './components/FullscreenImageViewer';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
 // --- WICHTIG: LOKALE BILDER IMPORTIEREN ---
-// Die Bildimporte sollten in den jeweiligen Komponenten-Dateien erfolgen.
-// Hier bleiben sie nur für die Datenstruktur-Definition in der App-Komponente.
+// Die Bildimporte bleiben hier, um die Datenstruktur zu definieren.
 import bild1 from './assets/bilder/hero/Bild1.JPEG';
 import bild2 from './assets/bilder/hero/Bild2.JPEG';
 import bild3 from './assets/bilder/hero/Bild3.JPEG';
@@ -27,7 +26,7 @@ import bild11 from './assets/bilder/hero/Bild11.JPEG';
 import bild12 from './assets/bilder/hero/Bild12.JPEG';
 import heroBackground from './assets/bilder/hero/Bild6.JPEG';
 
-// --- TYPDEFINITIONEN (Normalerweise in einer types.ts Datei) ---
+// --- TYPDEFINITIONEN ---
 interface ImageData {
   id: number;
   src: string;
@@ -47,7 +46,7 @@ interface SocialLink {
 }
 
 
-// --- DATEN (Normalerweise in einer data.ts Datei) ---
+// --- DATEN ---
 const mockImages: ImageData[] = [
   { id: 1, src: bild1, alt: "A forest path", aspect: "landscape" },
   { id: 2, src: bild2, alt: "Biker in the woods", aspect: "portrait" },
@@ -166,7 +165,7 @@ function App() {
             <SocialSidebar socialLinks={socialLinksData} />
             
             <Routes>
-                <Route path="/" element={<HeroSection />} />
+                <Route path="/" element={<Hero />} />
                 <Route path="/portfolio" element={<GallerySection images={mockImages} onImageClick={handleImageClick} />} />
                 <Route path="/motion" element={<div><h1>Motion Page</h1></div>} />
             </Routes>
