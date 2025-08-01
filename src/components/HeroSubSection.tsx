@@ -1,0 +1,113 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+// --- WICHTIG: LOKALE BILDER IMPORTIEREN ---
+// Importieren Sie hier Ihre lokalen Bilder. Der korrekte Pfad ist jetzt von der Root-Ebene aus.
+import cardBild1 from '../assets/bilder/hero/Bild1.JPEG';
+import cardBild2 from '../assets/bilder/hero/Bild2.JPEG';
+import cardBild3 from '../assets/bilder/hero/Bild3.JPEG';
+import cardBild4 from '../assets/bilder/hero/Bild4.JPEG';
+
+// --- TYPDEFINITIONEN ---
+interface HeroCardData {
+  id: number;
+  title: string;
+  subTitle?: string;
+  linkText: string;
+  linkTo: string;
+  background: string;
+  style: 'horizontal' | 'vertical';
+}
+
+interface HeroCardProps {
+  card: HeroCardData;
+  index: number;
+}
+
+// Komponente für eine einzelne Karte
+const HeroCard: React.FC<HeroCardProps> = ({ card, index }) => {
+  const isOffset = index % 2 !== 0;
+
+  return (
+    <div className={`relative h-full overflow-hidden rounded-md ${isOffset ? 'lg:mt-16' : ''}`}>
+      {/* Hintergrundbild */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+        style={{ backgroundImage: `url(${card.background})` }}
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-30 group-hover:bg-opacity-50 transition-colors duration-300" />
+      
+      {/* Inhalt */}
+      <div className="relative flex flex-col justify-end h-full p-6 text-white z-10">
+        <div className="mb-8">
+          <h2 className="text-4xl font-bold">{card.title}</h2>
+          {card.subTitle && <p className="text-gray-300">{card.subTitle}</p>}
+        </div>
+        <Link
+          to={card.linkTo}
+          className="text-white flex items-center space-x-2 text-sm uppercase tracking-wide opacity-80 hover:opacity-100 transition-opacity duration-300"
+        >
+          <span>{card.linkText}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+
+// Hauptkomponente für die Hero-Subsektion
+const HeroSubSection: React.FC = () => {
+    // Daten für die Hero-Karten
+    const heroCards: HeroCardData[] = [
+        {
+            id: 1,
+            title: 'ANDY!',
+            subTitle: 'VIEW PORTFOLIO',
+            linkText: 'VIEW PORTFOLIO',
+            linkTo: '/portfolio',
+            background: cardBild1, // Hier wird die importierte Variable verwendet
+            style: 'vertical',
+        },
+        {
+            id: 2,
+            title: 'emble',
+            subTitle: 'MAIL LIST',
+            linkText: 'MAIL LIST',
+            linkTo: '#',
+            background: cardBild2, // Hier wird die importierte Variable verwendet
+            style: 'vertical',
+        },
+        {
+            id: 3,
+            title: 'MOMENTS IN A MINUTE',
+            subTitle: 'EDUCATION',
+            linkText: 'EDUCATION',
+            linkTo: '#',
+            background: cardBild3, // Hier wird die importierte Variable verwendet
+            style: 'vertical',
+        },
+        {
+            id: 4,
+            title: 'MODERN MOOD FINISHING LUTS',
+            subTitle: 'MY PRESETS',
+            linkText: 'MY PRESETS',
+            linkTo: '#',
+            background: cardBild4, // Hier wird die importierte Variable verwendet
+            style: 'vertical',
+        },
+    ];
+
+  return (
+    <section className="py-20 flex items-center justify-center bg-black bg-opacity-70">
+      <div className="container mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {heroCards.map((card, index) => (
+          <HeroCard key={card.id} card={card} index={index} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default HeroSubSection;

@@ -9,7 +9,7 @@ import GallerySection from './screens/GallerySection';
 import FullscreenImageViewer from './components/FullscreenImageViewer';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-
+import HeroSubSection from './components/HeroSubSection';
 
 // --- TYPDEFINITIONEN FÜR DIESE DATEI ---
 interface ImageData {
@@ -67,13 +67,14 @@ const mockImages: ImageData[] = [
 const mainNavLinks: NavLink[] = [
     { name: 'Homepage', href: '/' },
     { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Kontakt', href: '/kontakt' },
+    { name: 'Motion', href: '/motion' },
 ];
 
 const subNavLinks: NavLink[] = [
-    { name: 'AGB', href: '#' },
-    { name: 'Datenschutzerklärung', href: '#' },
-    { name: 'Impressum', href: '#' },
+    { name: 'WALL LIST', href: '#' },
+    { name: 'EDUCATION', href: '#' },
+    { name: 'MY PRESETS', href: '#' },
+    { name: 'PRIVATE', href: '#' },
 ];
 
 const socialLinksData: SocialLink[] = [
@@ -96,7 +97,6 @@ const socialLinksData: SocialLink[] = [
 ];
 
 
-// Haupt-App-Komponente
 function App() {
   const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -166,7 +166,12 @@ function App() {
             <SocialSidebar socialLinks={socialLinksData} />
             
             <Routes>
-                <Route path="/" element={<Hero />} />
+                <Route path="/" element={
+                  <>
+                    <Hero />
+                    <HeroSubSection />
+                  </>
+                } />
                 <Route path="/portfolio" element={<GallerySection images={mockImages} onImageClick={handleImageClick} />} />
                 <Route path="/motion" element={<div><h1>Motion Page</h1></div>} />
             </Routes>
