@@ -63,18 +63,18 @@ const HeroSubSection: React.FC = () => {
     const heroCards: HeroCardData[] = [
         {
             id: 1,
-            title: 'ANDY!',
-            subTitle: 'VIEW PORTFOLIO',
-            linkText: 'VIEW PORTFOLIO',
+            title: 'APVisuals',
+            subTitle: 'Unser PORTFOLIO',
+            linkText: 'Zun PORTFOLIO',
             linkTo: '/portfolio',
             background: cardBild1, // Hier wird die importierte Variable verwendet
             style: 'vertical',
         },
         {
             id: 2,
-            title: 'emble',
-            subTitle: 'MAIL LIST',
-            linkText: 'MAIL LIST',
+            title: 'Webdesign & Entwicklung',
+            subTitle: 'WEB DESIGN',
+            linkText: 'zu den Designs',
             linkTo: '#',
             background: cardBild2, // Hier wird die importierte Variable verwendet
             style: 'vertical',
@@ -90,9 +90,9 @@ const HeroSubSection: React.FC = () => {
         },
         {
             id: 4,
-            title: 'MODERN MOOD FINISHING LUTS',
-            subTitle: 'MY PRESETS',
-            linkText: 'MY PRESETS',
+            title: 'Verbinde dich mit uns',
+            subTitle: 'Kontaktiere uns',
+            linkText: 'Kontakt',
             linkTo: '#',
             background: cardBild4, // Hier wird die importierte Variable verwendet
             style: 'vertical',
@@ -100,7 +100,7 @@ const HeroSubSection: React.FC = () => {
     ];
 
   return (
-    <section className="py-20 flex items-center justify-center bg-black bg-opacity-70">
+    <section className="h-screen py-20 flex items-center justify-center bg-black bg-opacity-70">
       <div className="container mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-6">
         {heroCards.map((card, index) => (
           <HeroCard key={card.id} card={card} index={index} />
