@@ -48,10 +48,15 @@ interface NavigationOverlayProps {
 const NavigationOverlay: React.FC<NavigationOverlayProps> = ({ isOpen, onClose, mainLinks, subLinks, background }) => {
   return (
     <div
-      className={`fixed inset-0 z-[60] bg-black bg-opacity-90 backdrop-blur-md text-white flex flex-col justify-center items-center p-8 transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[60] backdrop-blur-md text-white flex flex-col justify-center items-center p-8 transition-opacity duration-300 ${
         isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}
-      style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{
+        // Here's the change for the fading black background
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${background})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
       <button
         onClick={onClose}
@@ -61,12 +66,12 @@ const NavigationOverlay: React.FC<NavigationOverlayProps> = ({ isOpen, onClose, 
       </button>
 
       <div className="flex flex-col items-center">
-        <nav className="flex flex-col space-y-4 text-3xl font-bold mb-8 md:text-5xl md:flex-row md:space-y-0 md:space-x-12">
+        <nav className="flex justify-center flex-col gap-4 text-3xl font-bold mb-8 md:text-5xl md:flex-row md:gap-12 w-full">
           {mainLinks.map((link) => (
-            <Link key={link.name} to={link.href} className="hover:text-gray-400 transition-colors duration-300" onClick={onClose}>
-              {link.name}
-            </Link>
-          ))}
+          <Link key={link.name} to={link.href} className="hover:text-amber-400 transition-colors duration-300" onClick={onClose}>
+          {link.name}
+          </Link>
+        ))}
         </nav>
         <nav className="flex flex-col md:flex-row space-y-2 text-sm text-gray-400 md:space-y-0 md:space-x-6">
           {subLinks.map((link) => (
