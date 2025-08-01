@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialSidebar from './components/SocialSidebar'; // Angenommen, diese Komponente ist in einer separaten Datei
+import SocialSidebar from '../components/SocialSidebar'; // Angenommen, diese Komponente ist in einer separaten Datei
 
 // --- WICHTIG: LOKALE BILDER IMPORTIEREN ---
 // Ersetzen Sie './path-to-your-image.jpg' mit dem tatsächlichen Pfad zu Ihrem Hero-Bild.
