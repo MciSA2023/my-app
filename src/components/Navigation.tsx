@@ -13,19 +13,21 @@ const NavigationHeader: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-10 text-white px-6 md:px-8 py-4 flex items-center justify-between">
       {/* Hamburger Menu Button */}
       <div className="flex-1">
-        <button onClick={onToggle} className="text-white focus:outline-none p-2 rounded-full hover:bg-gray-800 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <button onClick={onToggle} className="text-white focus:outline-none p-2 rounded-full hover:bg-amber-400 transition">
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
       </div>
       
       {/* Logo */}
-      <h1 className="font-bold text-2xl flex-1 text-center hidden md:block">ANDY!</h1>
+      <a href="/" className="flex items-center space-x-2 hover:text-amber-400 transition">
+        <h1 className="font-bold text-2xl flex-1 text-center hidden md:block">APVisuals</h1>
+      </a>
       
       {/* Kontakt-Button */}
       <div className="flex-1 flex justify-end">
         <Link
           to="#"
-          className="border-2 border-white text-white font-medium py-2 px-6 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
+          className="border-2 border-white text-white font-medium py-2 px-6 rounded-full hover:bg-amber-400 hover:text-white transition-colors duration-300"
         >
           Get in touch
         </Link>

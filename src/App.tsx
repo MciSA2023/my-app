@@ -67,14 +67,13 @@ const mockImages: ImageData[] = [
 const mainNavLinks: NavLink[] = [
     { name: 'Homepage', href: '/' },
     { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Motion', href: '/motion' },
+    { name: 'Kontakt', href: '/kontakt' },
 ];
 
 const subNavLinks: NavLink[] = [
-    { name: 'WALL LIST', href: '#' },
-    { name: 'EDUCATION', href: '#' },
-    { name: 'MY PRESETS', href: '#' },
-    { name: 'PRIVATE', href: '#' },
+    { name: 'AGB', href: '#' },
+    { name: 'Datenschutzerklärung', href: '#' },
+    { name: 'Impressum', href: '#' },
 ];
 
 const socialLinksData: SocialLink[] = [
