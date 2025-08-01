@@ -10,7 +10,7 @@ interface NavLink {
 // Navigation Header Komponente
 const NavigationHeader: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-10 text-white px-6 md:px-8 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50  bg-opacity-10 text-white px-6 md:px-8 py-4 flex items-center justify-between">
       {/* Hamburger Menu Button */}
       <div className="flex-1">
         <button onClick={onToggle} className="text-white focus:outline-none p-2 rounded-full hover:bg-amber-400 transition">

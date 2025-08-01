@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
             <div className="absolute bottom-12 left-12 flex flex-col space-y-2 text-gray-300 z-10 text-sm">
                 <span>28° 36° N,  77° 12° E</span>
             </div>
-            <div className="absolute bottom-12 right-12 text-gray-300 z-10 text-sm hidden md:block">
+            <div className="absolute bottom-12 right-12 text-gray-300 z-10 text-lg hidden md:block hover:text-amber-400 transition-colors duration-300">
                 <span>Photograpy based in Innsbruck</span>
             </div>
             <SocialSidebar />
