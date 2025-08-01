@@ -1,7 +1,13 @@
 import React from 'react';
-import { ImageData } from '../types'; // Angenommen, types.ts existiert im Root-Verzeichnis
 
-// Vollbild-Bilderansicht-Komponente
+// --- TYPDEFINITIONEN FÜR DIESE KOMPONENTE ---
+interface ImageData {
+  id: number;
+  src: string;
+  alt: string;
+  aspect: 'portrait' | 'landscape';
+}
+
 interface FullscreenImageViewerProps {
   image: ImageData;
   onClose: () => void;

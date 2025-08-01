@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // --- KOMPONENTEN IMPORTE NACH DER KORRIGIERTEN HIERARCHIE ---
 import Navigation from './components/Navigation';
@@ -10,8 +10,26 @@ import FullscreenImageViewer from './components/FullscreenImageViewer';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
-// --- TYPDEFINITIONEN IMPORTIEREN ---
-import { ImageData, NavLink, SocialLink } from './types';
+
+// --- TYPDEFINITIONEN FÜR DIESE DATEI ---
+interface ImageData {
+  id: number;
+  src: string;
+  alt: string;
+  aspect: 'portrait' | 'landscape';
+}
+
+interface NavLink {
+  name: string;
+  href: string;
+}
+
+interface SocialLink {
+  name: string;
+  href: string;
+  icon: JSX.Element;
+}
+
 
 // --- WICHTIG: LOKALE BILDER IMPORTIEREN ---
 import bild1 from './assets/bilder/hero/Bild1.JPEG';
@@ -79,6 +97,7 @@ const socialLinksData: SocialLink[] = [
 ];
 
 
+// Haupt-App-Komponente
 function App() {
   const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NavLink as NavLinkType } from '../types';
+
+// --- TYPDEFINITIONEN FÜR DIESE KOMPONENTE ---
+interface NavLink {
+  name: string;
+  href: string;
+}
 
 // Navigation Header Komponente
 const NavigationHeader: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
@@ -33,8 +38,8 @@ const NavigationHeader: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
 interface NavigationOverlayProps {
   isOpen: boolean;
   onClose: () => void;
-  mainLinks: NavLinkType[];
-  subLinks: NavLinkType[];
+  mainLinks: NavLink[];
+  subLinks: NavLink[];
   background: string;
 }
 
@@ -78,8 +83,8 @@ interface FullNavigationProps {
   isOpen: boolean;
   onClose: () => void;
   onToggle: () => void;
-  mainLinks: NavLinkType[];
-  subLinks: NavLinkType[];
+  mainLinks: NavLink[];
+  subLinks: NavLink[];
   background: string;
 }
 

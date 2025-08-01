@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ImageData } from '../types'; // Angenommen, types.ts existiert im Root-Verzeichnis
+
 
 interface GalleryItemProps {
   image: ImageData;
@@ -40,7 +40,6 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onImageClick, index })
   );
 };
 
-// Galerie-Komponente (als eigene Sektion)
 interface GallerySectionProps {
   images: ImageData[];
   onImageClick: (image: ImageData) => void;
