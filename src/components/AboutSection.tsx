@@ -21,7 +21,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ imageSrc, text }) => {
       {/* Textsektion */}
       <div className="container mx-auto mt-12 md:mt-20">
         <div className="flex justify-center px-4 md:px-8">
-            <p className="text-gray-400 leading-relaxed max-w-4xl text-center font-body-light">{text}</p>
+            <p className="text-gray-400 leading-relaxed max-w-4xl text-xl text-center font-body-light">{text}</p>
         </div>
       </div>
     </section>
