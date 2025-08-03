@@ -101,7 +101,7 @@ const HeroSubSection: React.FC = () => {
 
   return (
     <section className="h-screen py-20 flex items-center justify-center bg-black bg-opacity-70">
-      <div className="container mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="container mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-6 h-[450px] lg:h-[450px]">
         {heroCards.map((card, index) => (
           <HeroCard key={card.id} card={card} index={index} />
         ))}

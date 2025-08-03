@@ -1,2 +1,15 @@
 @import "tailwindcss";
 
+
+
+/* --- Roboto Variable Font --- */
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/roboto/Roboto-VariableFont_wdth\,wght.ttf') format('ttf'); /* Pfad zur variablen Font-Datei */
+  font-weight: 100 900; /* Definiert den Bereich der verfügbaren Gewichte (z.B. von Thin bis Black) */
+  font-style: normal;  /* Für aufrechte Schnitte */
+  /* Wenn die Variable Font auch kursive Stile enthält und du sie als eine einzige Datei nutzen möchtest: */
+  /* font-style: normal italic; */
+  font-display: swap;
+}
+
