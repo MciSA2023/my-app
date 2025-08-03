@@ -10,6 +10,7 @@ import FullscreenImageViewer from './components/FullscreenImageViewer';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import HeroSubSection from './components/HeroSubSection';
+import AboutSection from './components/AboutSection';
 
 // --- TYPDEFINITIONEN FÜR DIESE DATEI ---
 interface ImageData {
@@ -46,6 +47,7 @@ import bild11 from './assets/bilder/hero/Bild11.JPEG';
 import bild12 from './assets/bilder/hero/Bild12.JPEG';
 import heroBackground from './assets/bilder/hero/Bild6.JPEG';
 import navBackground from './assets/bilder/hero/Bild6.JPEG'; // Hintergrundbild für Navigation
+import aboutbackground from './assets/bilder/apvisuals/Background.JPEG'; // Hintergrundbild für AboutSection
 
 
 // --- DATEN ---
@@ -170,6 +172,13 @@ function App() {
                   <>
                     <Hero />
                     <HeroSubSection />
+                    <AboutSection 
+                      imageSrc={aboutbackground} 
+                      text="Wir sind Adhar und Puneet – die kreativen Köpfe hinter AP Visuals.
+                      Unsere gemeinsame Leidenschaft ist visuelles Storytelling. Deshalb bieten wir Fotografie, Videoproduktion und Webdesign aus einer Hand, um eure Geschichte authentisch zu erzählen. Egal ob in Bildern, Filmen oder im Web – wir fangen Emotionen ein, geben Marken ein Gesicht und machen jeden Moment unvergesslich.
+                      Qualität ist unser Versprechen. Mit Präzision, Kreativität und dem höchsten Anspruch an uns selbst setzen wir eure Visionen in die Tat um." 
+                      />
+                    
                   </>
                 } />
                 <Route path="/portfolio" element={<GallerySection images={mockImages} onImageClick={handleImageClick} />} />
