@@ -7,10 +7,10 @@ import SocialSidebar from './components/SocialSidebar';
 import Hero from './screens/Hero';
 import GallerySection from './screens/GallerySection';
 import FullscreenImageViewer from './components/FullscreenImageViewer';
-import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import HeroSubSection from './components/HeroSubSection';
 import AboutSection from './components/AboutSection';
+import PortfolioSection from './components/PortfolioSection';
 
 // --- TYPDEFINITIONEN FÜR DIESE DATEI ---
 interface ImageData {
@@ -178,6 +178,7 @@ function App() {
                       Unsere gemeinsame Leidenschaft ist visuelles Storytelling. Deshalb bieten wir Fotografie, Videoproduktion und Webdesign aus einer Hand, um eure Geschichte authentisch zu erzählen. Egal ob in Bildern, Filmen oder im Web – wir fangen Emotionen ein, geben Marken ein Gesicht und machen jeden Moment unvergesslich.
                       Qualität ist unser Versprechen. Mit Präzision, Kreativität und dem höchsten Anspruch an uns selbst setzen wir eure Visionen in die Tat um." 
                       />
+                    <PortfolioSection />
                     
                   </>
                 } />
@@ -185,9 +186,7 @@ function App() {
                 <Route path="/motion" element={<div><h1>Motion Page</h1></div>} />
             </Routes>
 
-            <main className="pt-24 bg-black bg-opacity-70">
-              <ContactSection />
-            </main>
+            
 
             <Footer />
             {selectedImage && (
