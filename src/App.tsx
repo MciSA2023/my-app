@@ -52,11 +52,11 @@ import aboutbackground from './assets/bilder/apvisuals/Background.JPEG'; // Hint
 
 // --- DATEN ---
 const mockImages: ImageData[] = [
-  { id: 1, src: bild1, alt: "A forest path", aspect: "landscape" },
-  { id: 2, src: bild2, alt: "Biker in the woods", aspect: "portrait" },
+  { id: 1, src: bild1, alt: "A forest path", aspect: "portrait" },
+  { id: 2, src: bild5, alt: "Biker in the woods", aspect: "landscape" },
   { id: 3, src: bild3, alt: "Crowd at an event", aspect: "portrait" },
-  { id: 4, src: bild4, alt: "Person sitting", aspect: "landscape" },
-  { id: 5, src: bild5, alt: "Man with a beard", aspect: "portrait" },
+  { id: 4, src: bild2, alt: "Person sitting", aspect: "portrait" },
+  { id: 5, src: bild4, alt: "Man with a beard", aspect: "portrait" },
   { id: 6, src: bild6, alt: "Lake and mountain", aspect: "landscape" },
   { id: 7, src: bild7, alt: "Person in the snow", aspect: "portrait" },
   { id: 8, src: bild8, alt: "Man on a boat", aspect: "landscape" },

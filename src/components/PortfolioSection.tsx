@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import portfolioBild1 from '../assets/bilder/hero/Bild2.JPEG';
 import portfolioBild2 from '../assets/bilder/hero/Bild3.JPEG'; // Pfad korrigiert
 import portfolioBild3 from '../assets/bilder/hero/Bild4.JPEG';
-import portfolioBild4 from '../assets/bilder/hero/Bild10.JPEG'; // Beispielbild, falls benötigt
+import portfolioBild4 from '../assets/bilder/hero/Bild13.JPEG'; // Beispielbild, falls benötigt
 
 // --- TYPDEFINITIONEN ---
 interface PortfolioImage {
@@ -46,7 +46,7 @@ const PortfolioSection: React.FC = () => {
             alt: 'Person sitting',
             aspect: 'landscape',
             rotation: -10,
-            position: { top: '60%', left: '70%', width: '50%', height: '30%' }
+            position: { top: '60%', left: '70%', width: '30%', height: '40%' }
         },
     ];
 

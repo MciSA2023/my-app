@@ -17,12 +17,11 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onImageClick, index })
   const isPortrait = image.aspect === 'portrait';
   const gridClasses = `col-span-1 ${isPortrait ? 'row-span-2' : ''}`;
   
-  const offsetClasses = index % 2 !== 0 ? 'md:mt-16' : '';
 
   return (
     <button
       onClick={() => onImageClick(image)}
-      className={`relative overflow-hidden group rounded-lg shadow-lg ${gridClasses} ${offsetClasses} focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50`}
+      className={`relative overflow-hidden group rounded-lg shadow-lg ${gridClasses} focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50`}
     >
       {hasError ? (
         <div className="w-full h-full bg-gray-700 flex items-center justify-center text-gray-400">
@@ -48,7 +47,7 @@ interface GallerySectionProps {
 const GallerySection: React.FC<GallerySectionProps> = ({ images, onImageClick }) => {
   return (
     <section className="container mx-auto px-2 md:px-4 py-20">
-      <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[10rem] md:auto-rows-[12rem] lg:auto-rows-[16rem] grid-flow-row-dense">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[10rem] md:auto-rows-[12rem] lg:auto-rows-[16rem] grid-flow-row-dense">
         {images.map((image, index) => (
           <GalleryItem key={image.id} image={image} onImageClick={onImageClick} index={index} />
         ))}
