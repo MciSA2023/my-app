@@ -41,12 +41,12 @@ const HeroCard: React.FC<HeroCardProps> = ({ card, index }) => {
       {/* Inhalt */}
       <div className="relative flex flex-col justify-end h-full p-6 text-white z-10">
         <div className="mb-8">
-          <h2 className="text-4xl font-bold">{card.title}</h2>
-          {card.subTitle && <p className="text-gray-300">{card.subTitle}</p>}
+          <h2 className="text-4xl font-heading">{card.title}</h2>
+          {card.subTitle && <p className="text-gray-300 font-body-light">{card.subTitle}</p>}
         </div>
         <Link
           to={card.linkTo}
-          className="text-white flex items-center space-x-2 text-sm uppercase tracking-wide opacity-80 hover:opacity-100 transition-opacity duration-300"
+          className="text-white flex items-center space-x-2 text-sm uppercase tracking-wide opacity-80 hover:opacity-100 transition-opacity duration-300 font-subheading"
         >
           <span>{card.linkText}</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -64,8 +64,8 @@ const HeroSubSection: React.FC = () => {
         {
             id: 1,
             title: 'APVisuals',
-            subTitle: 'Unser PORTFOLIO',
-            linkText: 'Zun PORTFOLIO',
+            subTitle: 'UNSER PORTFOLIO',
+            linkText: 'Zum PORTFOLIO',
             linkTo: '/portfolio',
             background: cardBild1, // Hier wird die importierte Variable verwendet
             style: 'vertical',
@@ -91,7 +91,7 @@ const HeroSubSection: React.FC = () => {
         {
             id: 4,
             title: 'Verbinde dich mit uns',
-            subTitle: 'Kontaktiere uns',
+            subTitle: 'KONTAKTIERE UNS',
             linkText: 'Kontakt',
             linkTo: '#',
             background: cardBild4, // Hier wird die importierte Variable verwendet

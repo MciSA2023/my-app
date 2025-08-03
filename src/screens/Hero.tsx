@@ -20,11 +20,11 @@ const HeroSection: React.FC = () => {
             {/* Overlay */}
             <div className="absolute inset-0 z-0 bg-black opacity-40" />
             
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold z-10">APVisuals</h1>
-            <div className="absolute bottom-12 left-12 flex flex-col space-y-2 text-gray-300 z-10 text-sm">
+            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold z-10 font-heading">APVisuals</h1>
+            <div className="absolute bottom-12 left-12 flex flex-col space-y-2 text-gray-300 z-10 text-sm font-body-light">
                 <span>28° 36° N,  77° 12° E</span>
             </div>
-            <div className="absolute bottom-12 right-12 text-gray-300 z-10 text-lg hidden md:block hover:text-amber-400 transition-colors duration-300">
+            <div className="absolute bottom-12 right-12 text-gray-300 z-10 text-lg hidden md:block hover:text-amber-400 transition-colors duration-300 font-body-light">
                 <span>Photograpy based in Innsbruck</span>
             </div>
             <SocialSidebar />

@@ -20,14 +20,14 @@ const NavigationHeader: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
       
       {/* Logo */}
       <a href="/" className="flex items-center space-x-2 hover:text-amber-400 transition">
-        <h1 className="font-bold text-2xl flex-1 text-center hidden md:block">APVisuals</h1>
+        <h1 className="font-bold text-2xl flex-1 text-center hidden md:block font-subheading">APVisuals</h1>
       </a>
       
       {/* Kontakt-Button */}
       <div className="flex-1 flex justify-end">
         <Link
           to="#"
-          className="border-2 border-white text-white font-medium py-2 px-6 rounded-full hover:bg-amber-400 hover:text-white transition-colors duration-300"
+          className="border-2 border-white text-white font-medium py-2 px-6 rounded-full hover:bg-amber-400 hover:text-white transition-colors duration-300 font-subheading"
         >
           Get in touch
         </Link>
@@ -68,14 +68,14 @@ const NavigationOverlay: React.FC<NavigationOverlayProps> = ({ isOpen, onClose, 
       <div className="flex flex-col items-center">
         <nav className="flex justify-center flex-col gap-4 text-3xl font-bold mb-8 md:text-5xl md:flex-row md:gap-12 w-full">
           {mainLinks.map((link) => (
-          <Link key={link.name} to={link.href} className="hover:text-amber-400 transition-colors duration-300" onClick={onClose}>
+          <Link key={link.name} to={link.href} className="hover:text-amber-400 transition-colors duration-300 font-heading" onClick={onClose}>
           {link.name}
           </Link>
         ))}
         </nav>
         <nav className="flex flex-col md:flex-row space-y-2 text-sm text-gray-400 md:space-y-0 md:space-x-6">
           {subLinks.map((link) => (
-            <a key={link.name} href={link.href} className="hover:text-white transition-colors duration-300">
+            <a key={link.name} href={link.href} className="hover:text-white transition-colors duration-300 font-body-light">
               {link.name}
             </a>
           ))}
