@@ -29,7 +29,7 @@ const HeroCard: React.FC<HeroCardProps> = ({ card, index }) => {
   const isOffset = index % 2 !== 0;
 
   return (
-    <div className={`relative h-full overflow-hidden rounded-md ${isOffset ? 'lg:mt-16' : ''}`}>
+    <div className={`relative h-full hover:opacity-20 duration-300 overflow-hidden rounded-md ${isOffset ? 'lg:mt-16' : ''}`}>
       {/* Hintergrundbild */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
