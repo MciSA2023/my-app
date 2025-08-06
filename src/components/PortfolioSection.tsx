@@ -46,7 +46,7 @@ const PortfolioSection: React.FC = () => {
             alt: 'Person sitting',
             aspect: 'landscape',
             rotation: -10,
-            position: { top: '60%', left: '70%', width: '30%', height: '40%' }
+            position: { top: '55%', left: '70%', width: '30%', height: '40%' }
         },
         {
             src: portfolioBild4,
