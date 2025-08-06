@@ -11,6 +11,11 @@ const Footer: React.FC = () => {
         <h2 className="font-bold text-4xl md:text-5xl">APVisuals</h2>
         <div className="mt-4 flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-8">
           <p className="text-gray-400 hover:text-amber-400">© 2025 APVisuals. All rights reserved.</p>
+          <a className='text-gray-400 hover:text-amber-400'> AGB </a>
+          <p>|</p>
+          <a className='text-gray-400 hover:text-amber-400'> Datenschutzerklärung </a>
+          <p>|</p>
+          <a className='text-gray-400 hover:text-amber-400'> Impressum </a>
         </div>
       </div>
     </footer>
