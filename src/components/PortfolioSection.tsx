@@ -32,7 +32,7 @@ const PortfolioSection: React.FC = () => {
             alt: 'Crowd at an event',
             aspect: 'landscape',
             rotation: 5,
-            position: { top: '20%', left: '55%', width: '35%', height: '45%' }
+            position: { top: '20%', left: '50%', width: '35%', height: '45%' }
         },
         {
             src: portfolioBild3,
@@ -47,6 +47,13 @@ const PortfolioSection: React.FC = () => {
             aspect: 'landscape',
             rotation: -10,
             position: { top: '60%', left: '70%', width: '30%', height: '40%' }
+        },
+        {
+            src: portfolioBild4,
+            alt: 'Person sitting',
+            aspect: 'landscape',
+            rotation: -10,
+            position: { top: '10%', left: '85%', width: '30%', height: '40%' }
         },
     ];
 
