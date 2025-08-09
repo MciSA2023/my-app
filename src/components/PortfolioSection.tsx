@@ -7,6 +7,7 @@ import portfolioBild1 from '../assets/bilder/hero/Bild2.JPEG';
 import portfolioBild2 from '../assets/bilder/hero/Bild3.JPEG'; // Pfad korrigiert
 import portfolioBild3 from '../assets/bilder/hero/Bild4.JPEG';
 import portfolioBild4 from '../assets/bilder/hero/Bild13.JPEG'; // Beispielbild, falls benötigt
+import portfolioBild5 from '../assets/bilder/hero/Bild11.JPEG'; // Beispielbild, falls benötigt
 
 // --- TYPDEFINITIONEN ---
 interface PortfolioImage {
@@ -25,7 +26,7 @@ const PortfolioSection: React.FC = () => {
             alt: 'Biker in the woods',
             aspect: 'portrait',
             rotation: -5,
-            position: { top: '30%', left: '10%', width: '40%', height: '50%' }
+            position: { top: '30%', left: '15%', width: '40%', height: '50%' }
         },
         {
             src: portfolioBild2,
@@ -49,7 +50,7 @@ const PortfolioSection: React.FC = () => {
             position: { top: '55%', left: '70%', width: '30%', height: '40%' }
         },
         {
-            src: portfolioBild4,
+            src: portfolioBild5,
             alt: 'Person sitting',
             aspect: 'landscape',
             rotation: -10,
