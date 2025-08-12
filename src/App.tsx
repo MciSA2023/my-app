@@ -28,54 +28,25 @@ interface NavLink {
 
 
 
-
-
-
 // --- WICHTIG: LOKALE BILDER IMPORTIEREN ---
-import bild1 from './assets/bilder/hero/Bild1.JPEG';
-import bild2 from './assets/bilder/hero/Bild2.JPEG';
-import bild3 from './assets/bilder/hero/Bild3.JPEG';
-import bild4 from './assets/bilder/hero/Bild4.JPEG';
-import bild5 from './assets/bilder/hero/Bild5.JPEG';
-import bild6 from './assets/bilder/hero/Bild6.JPEG';
-import bild7 from './assets/bilder/hero/Bild7.JPEG';
-import bild8 from './assets/bilder/hero/Bild8.JPEG';
-import bild9 from './assets/bilder/hero/Bild9.JPEG';
-import bild10 from './assets/bilder/hero/Bild10.JPEG';
-import bild11 from './assets/bilder/hero/Bild11.JPEG';
-import bild12 from './assets/bilder/hero/Bild12.JPEG';
+
 import heroBackground from './assets/bilder/hero/Bild6.JPEG';
 import navBackground from './assets/bilder/hero/Bild6.JPEG'; // Hintergrundbild für Navigation
 import aboutbackground from './assets/bilder/apvisuals/Background.JPEG'; // Hintergrundbild für AboutSection
 
 
-// --- DATEN ---
-const mockImages: ImageData[] = [
-  { id: 1, src: bild1, alt: "A forest path", aspect: "portrait" },
-  { id: 2, src: bild5, alt: "Biker in the woods", aspect: "landscape" },
-  { id: 3, src: bild3, alt: "Crowd at an event", aspect: "portrait" },
-  { id: 4, src: bild2, alt: "Person sitting", aspect: "portrait" },
-  { id: 5, src: bild4, alt: "Man with a beard", aspect: "landscape" },
-  { id: 6, src: bild6, alt: "Lake and mountain", aspect: "landscape" },
-  { id: 7, src: bild7, alt: "Person in the snow", aspect: "portrait" },
-  { id: 8, src: bild8, alt: "Man on a boat", aspect: "landscape" },
-  { id: 9, src: bild9, alt: "Woman swimming", aspect: "portrait" },
-  { id: 10, src: bild10, alt: "Another biker", aspect: "landscape" },
-  { id: 11, src: bild11, alt: "Mountain view", aspect: "landscape" },
-  { id: 12, src: bild12, alt: "Another portrait", aspect: "portrait" },
-];
 
 const mainNavLinks: NavLink[] = [
     { name: 'Homepage', href: '/' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Motion', href: '/motion' },
+   // { name: 'Portfolio', href: '/portfolio' },
+   // { name: 'Motion', href: '/motion' },
 ];
 
 const subNavLinks: NavLink[] = [
-    { name: 'WALL LIST', href: '#' },
-    { name: 'EDUCATION', href: '#' },
-    { name: 'MY PRESETS', href: '#' },
-    { name: 'PRIVATE', href: '#' },
+  //  { name: 'WALL LIST', href: '#' },
+   // { name: 'EDUCATION', href: '#' },
+   // { name: 'MY PRESETS', href: '#' },
+   // { name: 'PRIVATE', href: '#' },
 ];
 
 

@@ -17,22 +17,6 @@ const SocialSidebar: React.FC = () => {
         </svg>
       ),
     },
-    {
-      name: 'Vimeo',
-      href: 'https://vimeo.com/your-profile',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
-             viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-             strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" 
-             className="lucide lucide-vimeo">
-          <path d="M2.87 18.237a1 1 0 0 1-.689-1.28l1.93-7.584a.5.5 0 0 1 
-                   .53-.377L20.254 9.17c.607-.063 1.132.396 1.132.997a.99.99 
-                   0 0 1-.789.988l-5.69 1.138c-1.37.273-2.164 1.777-1.442 
-                   3.01l1.455 2.477c.307.52.029 1.18-.584 1.34L3.774 19.34a1.002 
-                   1.002 0 0 1-.904-1.103z" />
-        </svg>
-      ),
-    },
     // Weitere Links ...
   ];
 
