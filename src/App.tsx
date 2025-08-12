@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+// src/App.tsx
+import { useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // --- KOMPONENTEN IMPORTE NACH DER KORRIGIERTEN HIERARCHIE ---
@@ -6,99 +7,35 @@ import Navigation from './components/Navigation';
 import SocialSidebar from './components/SocialSidebar';
 import Hero from './screens/Hero';
 import Gallery from './screens/GallerySection';
-import FullscreenImageViewer from './components/FullscreenImageViewer';
 import Footer from './components/Footer';
 import HeroSubSection from './components/HeroSubSection';
 import AboutSection from './components/AboutSection';
 import PortfolioSection from './components/PortfolioSection';
 
 // --- TYPDEFINITIONEN FÜR DIESE DATEI ---
-interface ImageData {
-  id: number;
-  src: string;
-  alt: string;
-  aspect: 'portrait' | 'landscape';
-}
 
 interface NavLink {
   name: string;
   href: string;
 }
 
-
-
-
 // --- WICHTIG: LOKALE BILDER IMPORTIEREN ---
-
 import heroBackground from './assets/bilder/hero/Bild6.JPEG';
 import navBackground from './assets/bilder/hero/Bild6.JPEG'; // Hintergrundbild für Navigation
 import aboutbackground from './assets/bilder/apvisuals/Background.JPEG'; // Hintergrundbild für AboutSection
 
-
-
 const mainNavLinks: NavLink[] = [
     { name: 'Homepage', href: '/' },
-   // { name: 'Portfolio', href: '/portfolio' },
-   // { name: 'Motion', href: '/motion' },
 ];
 
-const subNavLinks: NavLink[] = [
-  //  { name: 'WALL LIST', href: '#' },
-   // { name: 'EDUCATION', href: '#' },
-   // { name: 'MY PRESETS', href: '#' },
-   // { name: 'PRIVATE', href: '#' },
-];
-
-
-
+const subNavLinks: NavLink[] = [];
 
 function App() {
-  const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-
-  const handleCloseViewer = () => {
-    setSelectedImage(null);
-  };
-
-  const handleNextImage = () => {
-    if (selectedImage) {
-      const currentIndex = mockImages.findIndex(img => img.id === selectedImage.id);
-      const nextIndex = (currentIndex + 1) % mockImages.length;
-      setSelectedImage(mockImages[nextIndex]);
-    }
-  };
-
-  const handlePrevImage = () => {
-    if (selectedImage) {
-      const currentIndex = mockImages.findIndex(img => img.id === selectedImage.id);
-      const prevIndex = (currentIndex - 1 + mockImages.length) % mockImages.length;
-      setSelectedImage(mockImages[prevIndex]);
-    }
-  };
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (!selectedImage) return;
-      if (event.key === 'Escape') {
-        handleCloseViewer();
-      } else if (event.key === 'ArrowRight') {
-        handleNextImage();
-      } else if (event.key === 'ArrowLeft') {
-        handlePrevImage();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [selectedImage]);
-
 
   return (
     <Router>
@@ -129,24 +66,13 @@ function App() {
                       Qualität ist unser Versprechen. Mit Präzision, Kreativität und dem höchsten Anspruch an uns selbst setzen wir eure Visionen in die Tat um." 
                       />
                     <PortfolioSection />
-                    
                   </>
                 } />
                 <Route path="/portfolio" element={<Gallery/>} />
                 <Route path="/motion" element={<div><h1>Motion Page</h1></div>} />
             </Routes>
 
-            
-
             <Footer />
-            {selectedImage && (
-              <FullscreenImageViewer 
-                image={selectedImage} 
-                onClose={handleCloseViewer}
-                onNext={handleNextImage}
-                onPrev={handlePrevImage}
-              />
-            )}
           </div>
         </div>
     </Router>
