@@ -11,8 +11,3 @@ export interface NavLink {
   href: string;
 }
 
-export interface SocialLink {
-  name: string;
-  href: string;
-  icon: JSX.Element;
-}

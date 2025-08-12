@@ -3,9 +3,7 @@ import SocialSidebar from '../components/SocialSidebar'; // Angenommen, diese Ko
 
 // --- WICHTIG: LOKALE BILDER IMPORTIEREN ---
 // Ersetzen Sie './path-to-your-image.jpg' mit dem tatsächlichen Pfad zu Ihrem Hero-Bild.
-import heroBackground from '../assets/bilder/herofirst/Bild5.JPEG';
 import heroBackground2 from '../assets/bilder/herofirst/Horizont.JPEG'
-import heroBackground3 from '../assets/bilder/herofirst/Philly.JPEG';
 
 
 
