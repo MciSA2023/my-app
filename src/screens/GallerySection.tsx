@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FullscreenImageViewer from '../components/FullscreenImageViewer'; // Der Pfad zu deiner Viewer-Komponente
 import galleryImage from '../assets/bilder/gallery/Bild1.JPEG';
-import galleryImage2 from '../assets/bilder/gallery/Bild2.JPEG';
+import galleryImage2 from '../assets/bilder/gallery/Bild1.JPEG';
 import galleryImage3 from '../assets/bilder/gallery/Bild1.JPEG';
 import galleryImage4 from '../assets/bilder/gallery/Bild1.JPEG';
 import galleryImage5 from '../assets/bilder/gallery/Bild1.JPEG';
@@ -9,7 +9,7 @@ import galleryImage6 from '../assets/bilder/gallery/Bild1.JPEG';
 
 
 interface GalleryImage {
-  id: string;
+  id: number; // Ändere den Typ von string zu number
   src: string;
   alt: string;
   aspect: 'portrait' | 'landscape';
@@ -76,37 +76,37 @@ const GallerySection: React.FC<GallerySectionProps> = ({ images, onImageClick })
 // Beispielbilder direkt in der Komponente
 const mockImages: GalleryImage[] = [
   {
-    id: '1',
+    id: 1, // Ändere den Wert von string zu number
     src: galleryImage,
     alt: 'Bild 1: Landschaftsfotografie',
     aspect: 'landscape',
   },
   {
-    id: '2',
+    id: 2, // Ändere den Wert von string zu number
     src: galleryImage2,
     alt: 'Bild 2: Porträtfotografie',
     aspect: 'portrait',
   },
   {
-    id: '3',
+    id: 3, // Ändere den Wert von string zu number
     src: galleryImage3,
     alt: 'Bild 3: Städtische Szene',
     aspect: 'landscape',
   },
   {
-    id: '4',
+    id: 4, // Ändere den Wert von string zu number
     src: galleryImage4,
     alt: 'Bild 4: Weitere Porträtfotografie',
     aspect: 'portrait',
   },
   {
-    id: '5',
+    id: 5, // Ändere den Wert von string zu number
     src: galleryImage5,
     alt: 'Bild 5: Stilleben',
     aspect: 'landscape',
   },
   {
-    id: '6',
+    id: 6, // Ändere den Wert von string zu number
     src: galleryImage6,
     alt: 'Bild 6: Tierfotografie',
     aspect: 'portrait',
