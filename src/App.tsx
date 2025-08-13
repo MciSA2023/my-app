@@ -26,6 +26,7 @@ import aboutbackground from './assets/bilder/apvisuals/Background.JPEG'; // Hint
 
 const mainNavLinks: NavLink[] = [
     { name: 'Homepage', href: '/' },
+    { name: 'Portfolio', href: '/portfolio' },
 ];
 
 const subNavLinks: NavLink[] = [];
