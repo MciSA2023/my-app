@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FullscreenImageViewer from '../components/FullscreenImageViewer'; // Der Pfad zu deiner Viewer-Komponente
 import galleryImage from '../assets/bilder/gallery/Bild1.JPEG';
-import galleryImage2 from '../assets/bilder/gallery/Bild1.JPEG';
+import galleryImage2 from '../assets/bilder/gallery/Bild2.JPEG';
 import galleryImage3 from '../assets/bilder/gallery/Bild1.JPEG';
 import galleryImage4 from '../assets/bilder/gallery/Bild1.JPEG';
 import galleryImage5 from '../assets/bilder/gallery/Bild1.JPEG';
