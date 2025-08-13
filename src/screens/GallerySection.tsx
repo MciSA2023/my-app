@@ -1,4 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import FullscreenImageViewer from '../components/FullscreenImageViewer'; // Der Pfad zu deiner Viewer-Komponente
+import galleryImage from '../assets/bilder/gallery/Bild1.JPEG';
+import galleryImage2 from '../assets/bilder/gallery/Bild1.JPEG';
+import galleryImage3 from '../assets/bilder/gallery/Bild1.JPEG';
+import galleryImage4 from '../assets/bilder/gallery/Bild1.JPEG';
+import galleryImage5 from '../assets/bilder/gallery/Bild1.JPEG';
+import galleryImage6 from '../assets/bilder/gallery/Bild1.JPEG';
+
 
 interface GalleryImage {
   id: string;
@@ -65,34 +73,105 @@ const GallerySection: React.FC<GallerySectionProps> = ({ images, onImageClick })
   );
 };
 
-// Beispiel für Nutzung:
+// Beispielbilder direkt in der Komponente
 const mockImages: GalleryImage[] = [
   {
     id: '1',
-    src: '/images/image1.jpg',
-    alt: 'Bild 1',
+    src: galleryImage,
+    alt: 'Bild 1: Landschaftsfotografie',
     aspect: 'landscape',
   },
   {
     id: '2',
-    src: '/images/image2.jpg',
-    alt: 'Bild 2',
+    src: galleryImage2,
+    alt: 'Bild 2: Porträtfotografie',
     aspect: 'portrait',
   },
   {
     id: '3',
-    src: '/images/image3.jpg',
-    alt: 'Bild 3',
+    src: galleryImage3,
+    alt: 'Bild 3: Städtische Szene',
     aspect: 'landscape',
+  },
+  {
+    id: '4',
+    src: galleryImage4,
+    alt: 'Bild 4: Weitere Porträtfotografie',
+    aspect: 'portrait',
+  },
+  {
+    id: '5',
+    src: galleryImage5,
+    alt: 'Bild 5: Stilleben',
+    aspect: 'landscape',
+  },
+  {
+    id: '6',
+    src: galleryImage6,
+    alt: 'Bild 6: Tierfotografie',
+    aspect: 'portrait',
   },
 ];
 
 const Gallery: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+
   const handleImageClick = (image: GalleryImage) => {
-    alert(`Bild geklickt: ${image.alt}`);
+    setSelectedImage(image);
   };
 
-  return <GallerySection images={mockImages} onImageClick={handleImageClick} />;
+  const handleCloseViewer = () => {
+    setSelectedImage(null);
+  };
+
+  const handleNextImage = () => {
+    if (selectedImage) {
+      const currentIndex = mockImages.findIndex(img => img.id === selectedImage.id);
+      const nextIndex = (currentIndex + 1) % mockImages.length;
+      setSelectedImage(mockImages[nextIndex]);
+    }
+  };
+
+  const handlePrevImage = () => {
+    if (selectedImage) {
+      const currentIndex = mockImages.findIndex(img => img.id === selectedImage.id);
+      const prevIndex = (currentIndex - 1 + mockImages.length) % mockImages.length;
+      setSelectedImage(mockImages[prevIndex]);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!selectedImage) return;
+      if (event.key === 'Escape') {
+        handleCloseViewer();
+      } else if (event.key === 'ArrowRight') {
+        handleNextImage();
+      } else if (event.key === 'ArrowLeft') {
+        handlePrevImage();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedImage]);
+
+  return (
+    <>
+      <GallerySection images={mockImages} onImageClick={handleImageClick} />
+      {selectedImage && (
+        <FullscreenImageViewer
+          image={selectedImage}
+          onClose={handleCloseViewer}
+          onNext={handleNextImage}
+          onPrev={handlePrevImage}
+        />
+      )}
+    </>
+  );
 };
 
 export default Gallery;
+
