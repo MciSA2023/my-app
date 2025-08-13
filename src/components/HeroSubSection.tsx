@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import cardBild1 from '../assets/bilder/hero/Bild1.JPEG';
 import cardBild2 from '../assets/bilder/hero/Bild2.JPEG';
 import cardBild3 from '../assets/bilder/hero/Bild3.JPEG';
-import cardBild4 from '../assets/bilder/hero/Bild4.JPEG';
+import cardBild4 from '../assets/bilder/hero/Bild5 copy.JPEG';
 
 // --- TYPDEFINITIONEN ---
 interface HeroCardData {
@@ -75,7 +75,7 @@ const HeroSubSection: React.FC = () => {
             title: 'Webdesign & Entwicklung',
             subTitle: 'WEB DESIGN',
             linkText: 'zu den Designs',
-            linkTo: '#',
+            linkTo: '/portfolio',
             background: cardBild2, // Hier wird die importierte Variable verwendet
             style: 'vertical',
         },
@@ -84,7 +84,7 @@ const HeroSubSection: React.FC = () => {
             title: 'MOMENTS IN A MINUTE',
             subTitle: 'EDUCATION',
             linkText: 'EDUCATION',
-            linkTo: '#',
+            linkTo: '/portfolio',
             background: cardBild3, // Hier wird die importierte Variable verwendet
             style: 'vertical',
         },
@@ -93,7 +93,7 @@ const HeroSubSection: React.FC = () => {
             title: 'Verbinde dich mit uns',
             subTitle: 'KONTAKTIERE UNS',
             linkText: 'Kontakt',
-            linkTo: '#',
+            linkTo: '/portfolio',
             background: cardBild4, // Hier wird die importierte Variable verwendet
             style: 'vertical',
         },
