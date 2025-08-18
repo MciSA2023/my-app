@@ -81,12 +81,12 @@ const HeroSubSection: React.FC = () => {
         },
         {
             id: 3,
-            title: 'MOMENTS IN A MINUTE',
-            subTitle: 'EDUCATION',
-            linkText: 'EDUCATION',
+            title: 'Fotografie & Videografie',
+            subTitle: 'FOTOGRAFIE',
+            linkText: 'zu den Bildern',
             linkTo: '/portfolio',
             background: cardBild3, // Hier wird die importierte Variable verwendet
-            style: 'vertical',
+            style: 'horizontal',
         },
         {
             id: 4,
